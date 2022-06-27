@@ -42,7 +42,7 @@ export const Navbar = () => {
                 </NavLink>
                 <NavLink  
                     ref={ref.timerRef}
-                    to='#'>
+                    to='/timer'>
                     <img
                         ref={ref.timerImgRef}
                         src={timerIcon}

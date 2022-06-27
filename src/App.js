@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 // Components
-import { Navbar, Clock } from './view/components';
+import { Navbar, Clock, Timer } from './view/components';
 
 // Styles
 import { AppContainer } from './styles';
@@ -14,6 +14,10 @@ const App = () => {
         <Route
           path='*'
           element={<Clock />} 
+        />
+        <Route
+          path='/timer'
+          element={<Timer />} 
         />
       </Routes>
       <Navbar />

@@ -1,5 +1,5 @@
 // Hooks
-import { useDate, useRotate } from '../../../tools';
+import { useDate, useRotate} from '../../../tools';
 
 // Styles
 import { ClockContainer } from './styles';
