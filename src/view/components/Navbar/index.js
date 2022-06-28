@@ -52,7 +52,7 @@ export const Navbar = () => {
                 <NavLink
                     ref={ref.weatherRef}
                     className='right-btn'
-                    to='#'
+                    to='/weather'
                 >
                     <img
                         ref={ref.weatherImgRef}
