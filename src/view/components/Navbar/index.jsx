@@ -1,9 +1,9 @@
 // Core
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Hooks
-import { useRefAll } from '../../../tools';
+import { useNavbar } from '../../../tools';
 
 // Assets
 import clockIcon from '../../../assets/icons/clock.png';
@@ -15,25 +15,16 @@ import dropIcon from '../../../assets/icons/drop.png';
 import { Sidebar as SidebarWrapper } from './styles';
 
 export const Navbar = () => {
-    const ref = useRefAll();
-    const [isOpen, toggleIsOpen] = useState(false);
-    useEffect(() => {
-        document.addEventListener('click', (e) => {
-            if (e.target !== ref.clockRef.current && e.target !== ref.clockImgRef.current &&
-                e.target !== ref.timerRef.current && e.target !== ref.timerImgRef.current &&
-                e.target !== ref.weatherRef.current && e.target !== ref.weatherImgRef.current &&
-                e.target !== ref.btnRef.current && e.target !== ref.btnImgRef.current && isOpen) {
-                toggleIsOpen(false);
-            }
-        });
-    }, [isOpen])
+    const {ref, isOpen, toggleIsOpen} = useNavbar();
+    
     return (
         <SidebarWrapper className='sidebar'>
             <div className={isOpen ? 'open-panel' : 'hidden-panel'}>
                 <NavLink  
                     ref={ref.clockRef}
                     className='left-btn'
-                    to='/'>
+                    to='/'
+                >
                     <img
                         ref={ref.clockImgRef}
                         src={clockIcon}
@@ -42,7 +33,8 @@ export const Navbar = () => {
                 </NavLink>
                 <NavLink  
                     ref={ref.timerRef}
-                    to='/timer'>
+                    to='/timer'
+                >
                     <img
                         ref={ref.timerImgRef}
                         src={timerIcon}

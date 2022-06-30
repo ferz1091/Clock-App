@@ -20,7 +20,7 @@ const App = () => {
           element={<Timer />} 
         />
         <Route
-          path='/weather'
+          path='/weather/*'
           element={<Weather />} 
         />
       </Routes>

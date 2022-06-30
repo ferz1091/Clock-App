@@ -1,5 +1,6 @@
 // Core
 import { take, call, put, select } from 'redux-saga/effects';
+import { toggleIsFetching } from './reducers';
 
 // Actions
 import { weatherActions } from './slice';
@@ -31,6 +32,7 @@ export function* sagaWeatherByLocationWorker() {
     if (!(yield select((state) => {
         return state.weather.weatherDataByLocation
     }))) {
+        yield put(weatherActions.toggleIsFetching());
         const LocationData = yield call(getLocation);
         if (LocationData.serverError) {
             yield put(weatherActions.setWeatherDataByLocation(LocationData))
@@ -45,6 +47,7 @@ export function* sagaWeatherByLocationWorker() {
             const weatherData = yield call(getWeatherDataByLocation, city, country);
             yield put(weatherActions.setWeatherDataByLocation(weatherData));
         }
+        yield put(weatherActions.toggleIsFetching());
     }
 }
 

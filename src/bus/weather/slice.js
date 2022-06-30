@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 // Reducers
 import * as reducers from './reducers';
 
-const initialState = { location: null, weatherDataByLocation: null, error: null};
+const initialState = { location: null, weatherDataByLocation: null, error: null, isFetching: false};
 
 export const weatherSlice = createSlice({
     name: 'weather',

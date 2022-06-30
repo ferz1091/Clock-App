@@ -13,3 +13,10 @@ export const setWeatherDataByLocation = (state, action) => {
         weatherDataByLocation: action.payload,
     }
 }
+
+export const toggleIsFetching = (state, action) => {
+    return {
+        ...state,
+        isFetching: !state.isFetching,
+    }
+}

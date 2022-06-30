@@ -1,5 +1,5 @@
 // Hooks
-import { useDate, useRotate} from '../../../tools';
+import { useDate, useRotate } from '../../../tools';
 
 // Styles
 import { ClockContainer } from './styles';
@@ -17,7 +17,9 @@ export const Clock = () => {
         <ClockContainer className='Clock'>
             <section className='top-row'>
                 <div className='date'>
-                    <p>Day</p>
+                    <p>
+                        Day
+                    </p>
                     <p className='display-left'>
                         <span className={dayRotationEnable ? 'rotateBlock' : 'staticBlock'}>
                             {date}
@@ -25,7 +27,9 @@ export const Clock = () => {
                     </p>
                 </div>
                 <div className='dayOfWeek'>
-                    <p>Today</p>
+                    <p>
+                        Today
+                    </p>
                     <p className='display-center'>
                         <span className={dayRotationEnable ? 'rollBlock' : 'staticRoll'}>
                             {day}
@@ -33,7 +37,9 @@ export const Clock = () => {
                     </p>
                 </div>
                 <div className='month'>
-                    <p>Month</p>
+                    <p>
+                        Month
+                    </p>
                     <p className='display-right'>
                         <span className={monthRotationEnable ? 'rotateBlock' : 'staticBlock'}>
                             {month}
@@ -49,7 +55,9 @@ export const Clock = () => {
             </section>
             <section className='mid-row'>
                 <div className='hours'>
-                    <p>Hours</p>
+                    <p>
+                        Hours
+                    </p>
                     <p className='display-left'>
                         <span className={hoursRotationEnable.block ? 'rotateBlock' : 'staticBlock'}>
                             {hours < 10 ? 0 : hours < 20 ? 1 : 2}
@@ -60,7 +68,9 @@ export const Clock = () => {
                     </p>
                 </div>
                 <div className='minutes'>
-                    <p>Minutes</p>
+                    <p>
+                        Minutes
+                    </p>
                     <p className='display-center'>
                         <span className={minutesRotationEnable.block ? 'rotateBlock' : 'staticBlock'}>
                             {Math.trunc(minutes / 10)}
@@ -71,7 +81,9 @@ export const Clock = () => {
                     </p>
                 </div>
                 <div className='seconds'>
-                    <p>Seconds</p>
+                    <p>
+                        Seconds
+                    </p>
                     <p className='display-right'>
                         <span className={secondsRotationEnable ? 'rotateBlock' : 'staticBlock'}>
                             {Math.trunc(seconds / 10)}
@@ -84,7 +96,9 @@ export const Clock = () => {
             </section>
             <section className='bot-row'>
                 <div className='year'>
-                    <p className='year-label'>Year</p>
+                    <p className='year-label'>
+                        Year
+                    </p>
                     <p className='display-single'>
                         <span className={yearRotationEnable ? 'rollBlock' : 'staticRoll'}>
                             {year}

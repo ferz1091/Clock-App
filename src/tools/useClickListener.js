@@ -1,7 +1,7 @@
 // Core
 import { useRef } from 'react';
 
-export const useRefAll = () => {
+export const useNavbarClickListener = () => {
     const clockRef = useRef(null);
     const timerRef = useRef(null);
     const weatherRef = useRef(null);
