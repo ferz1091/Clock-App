@@ -38,6 +38,11 @@ width: 35px;
     display: inline-block;
     width: 45px;
 }
+@media (max-width: 768px) {
+    .hour {
+        border: none;
+    }
+}
 @media (max-height: 600px) {
     display: flex;
     justify-content: space-around;
@@ -50,5 +55,8 @@ width: 35px;
 }
 @media (max-height: 400px) {
     font-size: 10px;
+    .hour {
+        border: none;
+    }
 }
 `;

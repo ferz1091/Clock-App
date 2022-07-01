@@ -1,16 +1,16 @@
 // Core
-import { Routes, Route } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 // Hooks
 import { useWeather } from '../../../tools';
 
 // Components
-import { Today, Hourly } from './components';
+import { Today, Hourly, Spinner } from './components';
 
 // Assets
 import dropIcon from '../../../assets/icons/drop-right.png';
 import closeIcon from '../../../assets/icons/close.png';
+import closeWhiteIcon from '../../../assets/icons/close-white.png';
 
 // Styles
 import { WeatherWrapper } from './styles';
@@ -26,9 +26,7 @@ export const Weather = () => {
             isOpen = {isOpen}
         >
             {isFetching || !location || !weatherData ? 
-                <div>
-                    Загрузка данных
-                </div>
+                <Spinner />
                 :
                 <>
                     <section className='weather-panel'>
@@ -67,7 +65,7 @@ export const Weather = () => {
                         <img
                             onClick={() => toggleIsOpen(false)}
                             className='closeIcon' 
-                            src = {closeIcon} 
+                            src = {new Date().getHours >= 21 || new Date().getHours() < 9 ? closeWhiteIcon : closeIcon} 
                             alt = 'close' 
                         />
                     </section>

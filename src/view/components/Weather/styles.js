@@ -38,7 +38,7 @@ background: ${(props) =>
         left: 50%;
         transform: translate(-50%, -50%);
         white-space: nowrap;
-        letter-spacing: 9px;
+        letter-spacing: 3px;
         font-family: Cabin;
     }
     .country {
@@ -105,6 +105,7 @@ background: ${(props) =>
     left: 100%;
 }
 @media (max-width: 768px) {
+    overflow: hidden;
     .hourly-panel {
         width: 99%;
     }
