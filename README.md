@@ -10,3 +10,5 @@ Clock-App is my first pet-project, it has a clock, stopwatch and weather forecas
   -keeps running in the background - if the user doesn't stop the stopwatch, but goes to another page, then after returning the stopwatch continues to count as if he had been counting all this time.
   
 3. Weather forecast - uses the user's location. It has an hourly forecast for the current day and an average forecast for 14 days ahead.
+
+Used libs: Redux, Redux-Saga, Styled-components.
