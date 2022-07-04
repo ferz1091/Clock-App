@@ -1,5 +1,6 @@
 // Core
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 // Hooks
 import { useWeatherToday } from '../../../../../tools/useWeatherToday';
@@ -84,8 +85,14 @@ export const Today = (data) => {
                     <sup>
                         {wind_direction}
                     </sup>
+                    <sub>
+                        m/s
+                    </sub>
                 </span>
             </div>
+            <NavLink className='weeks' to='/weather/2weeks'>
+                    For 2 weeks
+            </NavLink>
         </TodayWrapper>
     )
 }

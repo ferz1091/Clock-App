@@ -26,8 +26,8 @@ background: ${(props) =>
     height: 100%;
     color: ${(props) =>
     props.hour >= 21 || props.hour < 4 ? '#c7c7c7' :
-            props.hour >= 4 && props.hour < 9 ? 'linear-gradient(to right, #1a2980, #26d0ce);' :
-                props.hour >= 9 && props.hour < 12 ? 'linear-gradient(to right, #ede574, #e1f5c4);' :
+        props.hour >= 4 && props.hour < 9 ? '#c7c7c7' :
+                props.hour >= 9 && props.hour < 12 ? 'black' :
                     props.hour >= 12 && props.hour < 18 ? 'black' :
                     props.hour >= 18 && props.hour < 21 ? 'white' : 'none'};
     h1 {

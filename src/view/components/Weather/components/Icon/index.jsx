@@ -48,7 +48,8 @@ import type_43n from '../../../../../assets/icons/weather/type_43n.png';
 
 export const Icon = (props) => {
     function getIcon() {
-        switch(props.condition) {
+        const condition = props.condition.includes(',') ? props.condition.slice(0, props.condition.indexOf(',')) : props.condition;
+        switch(condition) {
             case 'Blowing Or Drifting Snow': return type_1;
             case 'Drizzle': return type_2;
             case 'Heavy Drizzle': return type_3;

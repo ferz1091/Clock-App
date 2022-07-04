@@ -1,12 +1,14 @@
 // Core
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux/es/exports';
+import { useLocation } from 'react-router-dom'
 
 // Bus
 import { useWeatherData } from '../bus/weather';
 
 export const useWeather = () => {
     const { getWeatherDataByLocation } = useWeatherData();
+    const loc = useLocation()
     const refBtn = useRef();
     const refImg = useRef();
     const [isOpen, toggleIsOpen] = useState(false);
@@ -43,5 +45,6 @@ export const useWeather = () => {
         refImg,
         isOpen,
         toggleIsOpen,
+        loc,
     }
 }

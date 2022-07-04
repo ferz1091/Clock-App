@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useWeather } from '../../../tools';
 
 // Components
-import { Today, Hourly, Spinner } from './components';
+import { Today, Hourly, Spinner, Weeks } from './components';
 
 // Assets
 import dropIcon from '../../../assets/icons/drop-right.png';
@@ -17,8 +17,8 @@ import { WeatherWrapper } from './styles';
 
 
 export const Weather = () => {
-    const { weatherData, location, isFetching, refBtn, refImg, isOpen, toggleIsOpen } = useWeather();
-
+    const { weatherData, location, isFetching, refBtn, refImg, isOpen, toggleIsOpen, loc } = useWeather();
+    
     return (
         <WeatherWrapper 
             className='Weather-page' 
@@ -30,6 +30,7 @@ export const Weather = () => {
                 :
                 <>
                     <section className='weather-panel'>
+                        {loc.pathname === '/weather/today' ?
                         <h1>
                             <span className='city'>
                                 {location.city}
@@ -38,10 +39,16 @@ export const Weather = () => {
                                 {location.country}
                             </span>
                         </h1>
+                        :
+                        null}
                         <Routes>
                             <Route
                                 path='/today'
                                 element={<Today {...weatherData.days[0]} />}
+                            />
+                            <Route
+                                path='/2weeks'
+                                element={<Weeks days ={weatherData.days}/>}
                             />
                             <Route
                                 path='*'
@@ -49,6 +56,7 @@ export const Weather = () => {
                             />
                         </Routes>
                     </section>
+                    {loc.pathname === '/weather/today' ?
                     <section className={isOpen ? 'hourly-panel' : 'hourly-panel-hidden'}>
                         {Array.from(weatherData.days[0].hours).reverse().map((hour, index) => <Hourly key={index} {...hour} />)}
                         <button
@@ -68,7 +76,10 @@ export const Weather = () => {
                             src = {new Date().getHours >= 21 || new Date().getHours() < 9 ? closeWhiteIcon : closeIcon} 
                             alt = 'close' 
                         />
-                    </section>
+                    </section> 
+                    : 
+                    null 
+                    }
                 </>
             }
         </WeatherWrapper>

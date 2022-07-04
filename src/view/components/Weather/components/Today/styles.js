@@ -51,6 +51,25 @@ transform: translate(-50%, -50%);
         font-weight: 100;
     }
 }
+.weeks {
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translate(-50%, 0);
+    box-sizing: border-box;
+    width: 80px;
+    height: 20px;
+    background: linear-gradient(to bottom, rgb(50,50,50) 0%, rgb(10,10,10) 50%, rgb(0,0,0) 100%);
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 50% 50% 0 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weeks:hover {
+    background: linear-gradient(to top, rgb(200,200,200) 0%, rgb(60,60,60) 50%, rgb(50,50,50) 100%);
+}
 @media (max-width: 768px) {
     .parameters {
         flex-direction: row;
