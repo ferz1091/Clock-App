@@ -116,6 +116,9 @@ overflow: hidden;
         margin-bottom: 50%;
     }
 }
+.days::-webkit-scrollbar {
+    width: 0;
+}
 @media (max-width: 768px) {
     .days {
         .active {
